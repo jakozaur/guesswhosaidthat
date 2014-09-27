@@ -1,1 +1,10 @@
 /* CSS declarations go here */
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}

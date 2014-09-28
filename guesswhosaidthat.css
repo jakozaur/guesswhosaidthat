@@ -8,3 +8,13 @@ p {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
 }
+
+.success {
+  background-color: #26b27f;
+  color: white;
+  border-radius: 5px;
+}
+
+.success:hover {
+  background-color: #1d8761;
+}

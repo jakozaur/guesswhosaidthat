@@ -18,3 +18,11 @@ h4, h5 {
 .success:hover {
   background-color: #1d8761;
 }
+
+.landing h1, .landing button {
+  margin: 20px 0;
+}
+
+.start-guessing {
+  text-align: center;
+}

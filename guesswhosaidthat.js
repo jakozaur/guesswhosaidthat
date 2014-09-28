@@ -6,12 +6,6 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.question.events({
-    'click ul li': function () {
-      Router.go('answer');
-    }
-  });
-
   Template.answer.events({
     'click button': function () {
       Router.go('question');

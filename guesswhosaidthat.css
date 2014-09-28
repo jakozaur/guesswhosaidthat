@@ -26,3 +26,14 @@ h4, h5 {
 .start-guessing {
   text-align: center;
 }
+
+.question ul img {
+  width: 64px;
+  height: 64px;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.question li {
+  list-style-type: none;
+}

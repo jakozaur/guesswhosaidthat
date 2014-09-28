@@ -1,17 +1,20 @@
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault("counter", 0);
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get("counter");
+  Template.guess.events({
+    'click button': function () {
+      Router.go('question');
     }
   });
 
-  Template.hello.events({
+  Template.question.events({
+    'click ul li': function () {
+      Router.go('answer');
+    }
+  });
+
+  Template.answer.events({
     'click button': function () {
-      // increment the counter when button is clicked
-      Session.set("counter", Session.get("counter") + 1);
+      Router.go('question');
     }
   });
 }

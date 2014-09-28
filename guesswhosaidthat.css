@@ -1,7 +1,8 @@
 /* CSS declarations go here */
-h1 {
+h1, h1 small {
   font-family: 'Open Sans', sans-serif;
   font-weight: 200;
+  color: black;
 }
 
 h4, h5 {
@@ -20,7 +21,7 @@ h4, h5 {
 }
 
 .landing h1, .landing button {
-  margin: 20px 0;
+  margin: 25px 0;
 }
 
 .start-guessing {
@@ -37,3 +38,16 @@ h4, h5 {
 .question li {
   list-style-type: none;
 }
+
+h4.quiz-answer {
+  display: inline;
+  margin-left: 10px;
+}
+
+ul {
+  margin-top: 15px;
+}
+
+
+
+

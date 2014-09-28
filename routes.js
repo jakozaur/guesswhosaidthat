@@ -1,5 +1,5 @@
 Router.map(function () {
-  this.route('guess', {
+  this.route('landing', {
     path: '/'
   });
   this.route('question');

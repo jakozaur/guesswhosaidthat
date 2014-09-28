@@ -1,6 +1,6 @@
 if (Meteor.isClient) {
 
-  Template.guess.events({
+  Template.landing.events({
     'click button': function () {
       Router.go('question');
     }

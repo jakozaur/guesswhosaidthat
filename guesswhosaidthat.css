@@ -20,11 +20,11 @@ h4, h5 {
   background-color: #1d8761;
 }
 
-.landing h1, .landing button {
+.landing h1, .landing button, .success {
   margin: 25px 0;
 }
 
-.start-guessing {
+.start-guessing, .answer {
   text-align: center;
 }
 
@@ -44,7 +44,7 @@ h4.quiz-answer {
   margin-left: 10px;
 }
 
-ul {
+ul, .answer {
   margin-top: 15px;
 }
 

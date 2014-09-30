@@ -2,13 +2,28 @@
   <div class="admin">
     <h1>Admin panel</h1>
     <h2>People</h2>
-    <h3>Add</h3>
-      {{> quickForm collection="People" id="insertPeople" type="insert"}}
+    {{#if editPerson}}
+      <h3>Edit</h3>
+      {{> quickForm collection="People" id="updatePerson" type="update" buttonContent="Edit" doc=editPerson}}
+    {{else}}
+      <h3>Add</h3>
+      {{> quickForm collection="People" id="insertPerson" type="insert" buttonContent="Add"}}
+    {{/if}}
+
     <h3>Current</h3>
-    <ul>
+    <table>
       {{#each people}}
-        <li><img src="{{photoUrl}}" /> {{name}}</li>
+        {{> adminPerson}}
       {{/each}}
-    </ul>
+    </table>
   </div>
+</template>
+
+<template name="adminPerson">
+  <tr>
+    <td><img src="{{photoUrl}}" /></td>
+    <td>{{name}}</td>
+    <td><span title="Edit" class="glyphicon glyphicon-pencil edit"></span></td>
+    <td><span title="Remove" class="glyphicon glyphicon-remove remove"></span></td>
+  </tr>
 </template>

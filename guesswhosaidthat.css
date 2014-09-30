@@ -32,7 +32,7 @@ h4 {
   text-align: center;
 }
 
-.admin ul li img, .question ul img {
+.admin table img, .question ul img {
   width: 64px;
   height: 64px;
   border-radius: 15px;
@@ -51,5 +51,3 @@ h4.quiz-answer {
 ul, .answer {
   margin-top: 15px;
 }
-
-

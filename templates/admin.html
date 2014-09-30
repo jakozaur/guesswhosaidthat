@@ -10,7 +10,7 @@
       {{> quickForm collection="People" id="insertPerson" type="insert" buttonContent="Add"}}
     {{/if}}
 
-    <h3>Current</h3>
+    <h3>Current {{peopleCounter}}</h3>
     <table>
       {{#each people}}
         {{> adminPerson}}

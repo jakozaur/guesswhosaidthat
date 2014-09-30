@@ -14,12 +14,18 @@ if (Meteor.isClient) {
 
 
   Template.admin.people = function () {
-    return People.find({});
+    return People.find({}, {
+      sort: ['name']
+    });
   };
 
   Template.admin.editPerson = function () {
     return People.findOne(Session.get('adminEditPerson'));
   };
+
+  Template.admin.peopleCounter = function () {
+    return People.find().count();
+  }
 
   AutoForm.hooks({
     updatePerson: {

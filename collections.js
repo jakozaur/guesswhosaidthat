@@ -8,7 +8,7 @@ People.attachSchema(new SimpleSchema({
   },
   photoUrl: {
     type: String,
-    label: "Photo url",
+    label: "Photo url (only square)",
     max: 300
   }
 }));

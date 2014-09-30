@@ -1,0 +1,14 @@
+<template name="admin">
+  <div class="admin">
+    <h1>Admin panel</h1>
+    <h2>People</h2>
+    <h3>Add</h3>
+      {{> quickForm collection="People" id="insertPeople" type="insert"}}
+    <h3>Current</h3>
+    <ul>
+      {{#each people}}
+        <li><img src="{{photoUrl}}" /> {{name}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</template>

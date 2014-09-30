@@ -11,6 +11,10 @@ if (Meteor.isClient) {
       Router.go('question');
     }
   });
+
+  Template.admin.people = function () {
+    return People.find({});
+  }
 }
 
 if (Meteor.isServer) {

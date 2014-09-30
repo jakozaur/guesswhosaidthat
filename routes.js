@@ -4,4 +4,7 @@ Router.map(function () {
   });
   this.route('question');
   this.route('answer');
+  this.route('admin');
 });
+
+

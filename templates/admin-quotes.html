@@ -6,7 +6,7 @@
     {{#if editQuote}}
       {{> quickForm collection="Quotes" id="updateQuote" type="update" buttonContent="Edit" doc=editQuote}}
     {{else}}
-      {{> quickForm collection="Quotes" id="insertQuote" type="insert" buttonContent="Add"}}
+      {{> quickForm collection="Quotes" id="insertQuote" type="insert" buttonContent="Add" validation="browser"}}
     {{/if}}
     <h2>Current quotes: {{quotesCounter}}</h2>
     {{#each quotes}} 

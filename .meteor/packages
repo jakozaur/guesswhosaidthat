@@ -11,4 +11,5 @@ ian:accounts-ui-bootstrap-3
 iron:router
 aldeed:autoform
 aldeed:collection2
+mrt:flash-messages
 

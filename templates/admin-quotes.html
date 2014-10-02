@@ -1,5 +1,32 @@
 <template name="adminQuotes">
-  <h1>Admin Quotes</h1>
-  <a href="/admin">Admin main</a><br>
-  <a href="/admin/people">Admin people</a>
+  <div class="adminQuotes">
+    <h1>Admin Quotes</h1>
+    <a href="/admin">Admin main</a><br>
+    <a href="/admin/people">Admin people</a>
+    {{#if editQuote}}
+      {{> quickForm collection="Quotes" id="updateQuote" type="update" buttonContent="Edit" doc=editQuote}}
+    {{else}}
+      {{> quickForm collection="Quotes" id="insertQuote" type="insert" buttonContent="Add"}}
+    {{/if}}
+    <h2>Current quotes: {{quotesCounter}}</h2>
+    {{#each quotes}} 
+      {{> adminQuote}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="adminQuote">
+  <tr>
+    <td>{{quote}}</td>
+    {{#each authors}}
+      <td>{{> adminQuoteAuthor}}</td>
+    {{/each}}
+    <td><span title="Edit" class="glyphicon glyphicon-pencil edit"></span></td>
+    <td><span title="Remove" class="glyphicon glyphicon-remove remove"></span></td>
+  </tr>
+</template>
+
+<template name="adminQuoteAuthor">
+  <img src="{{photoUrl}}" />
+  {{name}}
 </template>

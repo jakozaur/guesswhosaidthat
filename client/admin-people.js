@@ -16,6 +16,12 @@ AutoForm.hooks({
   updatePerson: {
     onSuccess: function() {
       Session.set('adminEditPerson', null);
+      FlashMessages.sendSuccess("Person successfully edited!");
+    }
+  }, 
+  insertPerson: {
+    onSuccess: function() {
+      FlashMessages.sendSuccess("Person successfully added!");
     }
   }
 });
@@ -25,6 +31,7 @@ Session.setDefault('adminEditPerson', null);
 Template.adminPerson.events({
   'click .remove': function () {
     People.remove(this._id);
+    FlashMessages.sendInfo("Person successfully removed!");
   },
   'click .edit': function () {
     Session.set('adminEditPerson', this._id);

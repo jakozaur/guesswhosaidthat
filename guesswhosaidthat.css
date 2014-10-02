@@ -32,7 +32,7 @@ h4 {
   text-align: center;
 }
 
-.adminPeople table img, .question ul img {
+.adminPeople table img, .question ul img, .adminQuotes img {
   width: 64px;
   height: 64px;
   border-radius: 15px;

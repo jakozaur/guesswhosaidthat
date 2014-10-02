@@ -11,7 +11,6 @@ if (Meteor.isClient) {
       Router.go('question');
     }
   });
-
 }
 
 if (Meteor.isServer) {

@@ -12,49 +12,6 @@ if (Meteor.isClient) {
     }
   });
 
-
-  Template.admin.people = function () {
-    return People.find({}, {
-      sort: ['name']
-    });
-  };
-
-  Template.admin.editPerson = function () {
-    return People.findOne(Session.get('adminEditPerson'));
-  };
-
-  Template.admin.peopleCounter = function () {
-    return People.find().count();
-  }
-
-  AutoForm.hooks({
-    updatePerson: {
-      onSuccess: function() {
-        Session.set('adminEditPerson', null);
-      }
-    }
-  });
-
-  AutoForm.addHooks(null, {
-    onSubmit: function () {
-      console.log("onSubmit ALL FORMS! 1");
-    },
-    onSuccess: function () {
-      console.log("onSubmit ALL FORMS! 2");
-
-    }
-  });
-
-  Session.setDefault('adminEditPerson', null);
-
-  Template.adminPerson.events({
-    'click .remove': function () {
-      People.remove(this._id);
-    },
-    'click .edit': function () {
-      Session.set('adminEditPerson', this._id);
-    }
-  });
 }
 
 if (Meteor.isServer) {

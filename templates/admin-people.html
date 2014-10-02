@@ -1,5 +1,30 @@
 <template name="adminPeople">
-  <h1>Admin People</h1>
-  <a href="/admin">Admin main</a><br>
-  <a href="/admin/quotes">Admin quotes</a>
+  <div class="adminPeople">
+    <h1>Admin People</h1>
+    <a href="/admin">Admin main</a><br>
+    <a href="/admin/quotes">Admin quotes</a>
+    <h2>People</h2>
+    {{#if editPerson}}
+      <h3>Edit</h3>
+      {{> quickForm collection="People" id="updatePerson" type="update" buttonContent="Edit" doc=editPerson}}
+    {{else}}
+      <h3>Add</h3>
+      {{> quickForm collection="People" id="insertPerson" type="insert" buttonContent="Add"}}
+    {{/if}}
+    <h3>Current {{peopleCounter}}</h3>
+    <table>
+      {{#each people}}
+        {{> adminPerson}}
+      {{/each}}
+    </table>
+  </div>
+</template>
+
+<template name="adminPerson">
+  <tr>
+    <td><img src="{{photoUrl}}" /></td>
+    <td>{{name}}</td>
+    <td><span title="Edit" class="glyphicon glyphicon-pencil edit"></span></td>
+    <td><span title="Remove" class="glyphicon glyphicon-remove remove"></span></td>
+  </tr>
 </template>

@@ -14,12 +14,18 @@ Template.adminPeople.peopleCounter = function () {
 
 AutoForm.hooks({
   updatePerson: {
+    after: {
+      update: function () {} // No-op to avoid auto-form bug
+    },
     onSuccess: function() {
       Session.set('adminEditPerson', null);
       FlashMessages.sendSuccess("Person successfully edited!");
     }
-  }, 
+  },
   insertPerson: {
+    after: {
+      insert: function () {} // No-op to avoid auto-form bug
+    },
     onSuccess: function() {
       FlashMessages.sendSuccess("Person successfully added!");
     }

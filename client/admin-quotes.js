@@ -30,13 +30,19 @@ Template.adminQuotes.editQuote = function () {
 
 AutoForm.hooks({
   updateQuote: {
-    onSuccess: function() {
+    after: {
+      update: function () {} // No-op to avoid auto-form bug
+    },
+    onSuccess: function () {
       Session.set('adminEditQuote', null);
       FlashMessages.sendSuccess("Quote successfully edited!");
     }
-  }, 
+  },
   insertQuote: {
-    onSuccess: function() {
+    after: {
+      insert: function () {} // No-op to avoid auto-form bug
+    },
+    onSuccess: function () {
       FlashMessages.sendSuccess("Quote successfully added!");
     }
   }

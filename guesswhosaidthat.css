@@ -47,6 +47,25 @@ button a, button a:hover {
   padding: 5px;
 }
 
+.adminQuotes .list-group-item {
+  border: none;
+}
+
+.adminQuotes .list-group-item .panel {
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin: 0;
+}
+
+.adminQuotes .list-group-item .panel-heading {
+  display: none;
+}
+
+.adminQuotes .list-group-item .panel-body {
+  padding: 0;
+}
+
 .question li {
   list-style-type: none;
 }

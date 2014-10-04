@@ -12,4 +12,5 @@ iron:router
 aldeed:autoform
 aldeed:collection2
 mrt:flash-messages
+underscore
 

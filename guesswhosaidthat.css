@@ -14,6 +14,14 @@ h4 {
   line-height: 20px;
 }
 
+button a:hover{
+  text-decoration: none;
+}
+
+button a, button a:hover {
+  color: white;
+}
+
 .success {
   background-color: #26b27f;
   color: white;

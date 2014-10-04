@@ -1,8 +1,27 @@
 <template name="admin">
-  <div class="admin">
+  <div class="admin container">
     <h1>Admin panel</h1>
-      <a href="/admin/quotes">Admin quotes</a>
-      <a href="/admin/people">Admin people</a>
+    <h3>Here you can add quotes to our database. </h3>
+    <h3>All you need to do is:</h3>
+    <ol>
+      <li>
+        <h3>Add name and url to the squared pictures of the people.</h3>
+        <h3>Remember to add people who actually said your quote as well as these who are your candidates.</h3>
+        <div>
+          <button type="button" class="btn btn-success success">
+            <a href="/admin/people"><h5>ADD PEOPLE</h5></a>
+          </button>
+        </div>
+      </li>
+      <li>
+        <h3>Add your quote. Next choose four people (correct one and 3 candidates).</h3>
+        <h3>Rememebr to choose the correct one as first!</h3>
+        <div>
+          <button type="button" class="btn btn-success success">
+            <a href="/admin/quotes"><h5>ADD QUOTES</h5></a>
+          </button>
+        </div>
+      </li>
+    </ol>
   </div>
 </template>
-

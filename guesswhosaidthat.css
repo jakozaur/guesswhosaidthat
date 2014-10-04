@@ -59,3 +59,7 @@ h4.quiz-answer {
 ul, .answer {
   margin-top: 15px;
 }
+
+.table-cell {
+  padding-left: 10px;
+}

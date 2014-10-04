@@ -1,17 +1,17 @@
 <template name="adminPeople">
   <div class="adminPeople container">
-    <h1>Admin People</h1>
-    <a href="/admin">Admin main</a><br>
+    <h1>Add People</h1>
+    <a href="/admin"><h4>Admin panel - main page</h4></a>
     <a href="/admin/quotes">Admin quotes</a>
-    <h2>People</h2>
     {{#if editPerson}}
       <h3>Edit</h3>
       {{> quickForm collection="People" id="updatePerson" type="update" buttonContent="Edit" doc=editPerson}}
     {{else}}
-      <h3>Add</h3>
+      <h3>Add person who said your quote and 3 candidates.</h3>
+      <h3>Take a look below: if people are already in the database you do not have to add them again:)</h3>
       {{> quickForm collection="People" id="insertPerson" type="insert" buttonContent="Add"}}
     {{/if}}
-    <h3>Current {{peopleCounter}}</h3>
+    <h3>People added so far to our database: {{peopleCounter}}</h3>
     <table>
       {{#each people}}
         {{> adminPerson}}
@@ -23,8 +23,8 @@
 <template name="adminPerson">
   <tr>
     <td><img src="{{photoUrl}}" /></td>
-    <td>{{name}}</td>
-    <td><span title="Edit" class="glyphicon glyphicon-pencil edit"></span></td>
-    <td><span title="Remove" class="glyphicon glyphicon-remove remove"></span></td>
+    <td class="table-cell"><h4>{{name}}</h4></td>
+    <td class="table-cell"><span title="Edit" class="glyphicon glyphicon-pencil edit"></span></td>
+    <td class="table-cell"><span title="Remove" class="glyphicon glyphicon-remove remove"></span></td>
   </tr>
 </template>

@@ -1,7 +1,7 @@
 <template name="adminQuotes">
   <div class="adminQuotes container">
     <h1>Admin Quotes</h1>
-    <a href="/admin">Admin main</a><br>
+    <a href="/admin"><h3>Admin main</h3></a>
     <a href="/admin/people">Admin people</a>
     {{#if editQuote}}
       {{> quickForm collection="Quotes" id="updateQuote" type="update" buttonContent="Edit" doc=editQuote}}

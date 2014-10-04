@@ -2,13 +2,12 @@
   <div class="adminQuotes container">
     <h1>Admin Quotes</h1>
     <a href="/admin"><h3>Admin main</h3></a>
-    <a href="/admin/people">Admin people</a>
     {{#if editQuote}}
       {{> quickForm collection="Quotes" id="updateQuote" type="update" buttonContent="Edit" doc=editQuote}}
     {{else}}
       {{> quickForm collection="Quotes" id="insertQuote" type="insert" buttonContent="Add" validation="browser"}}
     {{/if}}
-    <h2>Current quotes: {{quotesCounter}}</h2>
+    <h3>Current quotes: {{quotesCounter}}</h3>
     {{#each quotes}} 
       {{> adminQuote}}
     {{/each}}
@@ -17,9 +16,9 @@
 
 <template name="adminQuote">
   <tr>
-    <td>{{quote}}</td>
+    <td><h4>{{quote}}</h4></td>
     {{#each authors}}
-      <td>{{> adminQuoteAuthor}}</td>
+      <td><h4>{{> adminQuoteAuthor}}</h4></td>
     {{/each}}
     <td><span title="Edit" class="glyphicon glyphicon-pencil edit"></span></td>
     <td><span title="Remove" class="glyphicon glyphicon-remove remove"></span></td>

@@ -2,14 +2,13 @@
   <div class="adminPeople container">
     <h1>Add People</h1>
     <a href="/admin"><h4>Admin panel - main page</h4></a>
-    <a href="/admin/quotes">Admin quotes</a>
     {{#if editPerson}}
       <h3>Edit</h3>
       {{> quickForm collection="People" id="updatePerson" type="update" buttonContent="Edit" doc=editPerson}}
     {{else}}
       <h3>Add person who said your quote and 3 candidates.</h3>
       <h3>Take a look below: if people are already in the database you do not have to add them again:)</h3>
-      {{> quickForm collection="People" id="insertPerson" type="insert" buttonContent="Add"}}
+      {{> quickForm collection="People" id="insertPerson" type="insert" buttonContent="Add person"}}
     {{/if}}
     <h3>People added so far to our database: {{peopleCounter}}</h3>
     <table>

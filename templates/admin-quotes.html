@@ -16,12 +16,12 @@
 
 <template name="adminQuote">
   <tr>
-    <td><h4>{{quote}}</h4></td>
+    <td class="quote"><h4>{{quote}}</h4></td>
     {{#each authors}}
       <td><h4>{{> adminQuoteAuthor}}</h4></td>
     {{/each}}
-    <td><span title="Edit" class="glyphicon glyphicon-pencil edit"></span></td>
-    <td><span title="Remove" class="glyphicon glyphicon-remove remove"></span></td>
+    <td><span title="Edit" class="glyphicon glyphicon-pencil edit table-cell"></span></td>
+    <td><span title="Remove" class="glyphicon glyphicon-remove remove table-cell"></span></td>
   </tr>
 </template>
 

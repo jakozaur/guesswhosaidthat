@@ -82,3 +82,20 @@ ul, .answer {
 .table-cell {
   padding-left: 10px;
 }
+
+.adminQuotes td {
+  padding: 20px 0px;
+  border-bottom: 1px solid #D3D3D3;
+}
+
+
+.adminQuotes .quote {
+  max-width: 300px;
+  text-align: justify;
+  padding-right: 10px;
+  vertical-align: top;
+}
+
+
+
+

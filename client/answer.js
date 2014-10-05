@@ -27,6 +27,32 @@ Template.answer.correctAuthorUrl = function () {
   }
 };
 
+var generateTweet = function () {
+  var id = currentQuoteId();
+  if (id) {
+    var quote = Quotes.findOne(id).quote;
+    var prefix = "Who said: ";
+    var url = "http://guesswhosaidthat.com";
+    var maxLength = 140 /* tweet */- 25 /* t.co length */ - prefix.length;
+    // t.co length:
+    // https://dev.twitter.com/rest/reference/get/help/configuration
+    // plus one space
+    if (quote.length > maxLength) {
+      quote = quote.substring(0, maxLength - 3) + "...";
+    }
+    var tweet = prefix + quote;
+    return [encodeURIComponent(tweet), encodeURIComponent(url)];
+  } else {
+    return ["", ""];
+  }
+};
+
+Template.answer.tweet = function () {
+  var res = generateTweet();
+  return res[0] + " " + res[1];
+  var id = currentQuoteId();
+}
+
 Template.answer.events({
   'click .next': function () {
     var position = Session.get('questionPosition');
@@ -37,13 +63,19 @@ Template.answer.events({
       Session.set('questionOrder', null);
     }
   },
-  'click .tweet': function () {
+  'click .tweet': function (e) {
     // NOTE(jacek): Hacky way to detect if you have twitter app,
     // works well on phone.
     var now = new Date().valueOf();
     setTimeout(function () {
       if (new Date().valueOf() - now > 200) return;
-      window.location.href = "http://www.twitter.com/share?url=http://www.guesswhosaidthat.com/";
+      var tweet = generateTweet();;
+      window.location.href = "http://www.twitter.com/share?text=" + tweet[0] + "&url=" + tweet[1];
     }, 50);
+
+    // No touchscreen? No twitter app.
+    if (!('ontouchstart' in window)) {
+      e.preventDefault();
+    }
   }
 });

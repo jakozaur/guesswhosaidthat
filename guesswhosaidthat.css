@@ -1,4 +1,8 @@
 /* CSS declarations go here */
+body {
+  background-color: #F0F0F0;
+}
+
 h1, h1 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 200;
@@ -22,19 +26,20 @@ button a, button a:hover {
   color: white;
 }
 
+
 #login-dropdown-list {
   list-style: none;
   font-size: 150%;
 }
 
 .success {
-  background-color: #26b27f;
+  background-color: #1d8761;
   color: white;
   border-radius: 6px;
 }
 
 .success:hover {
-  background-color: #1d8761;
+  background-color: #789681;
 }
 
 .landing h1, .landing button, .success {
@@ -43,6 +48,13 @@ button a, button a:hover {
 
 .start-guessing {
   margin: 0 auto;
+}
+
+.question h1 {
+  font-weight: 300;
+  font-size: 18px;
+  margin: 10px 0;
+  min-height: 130px;
 }
 
 .question .author {
@@ -57,8 +69,8 @@ button a, button a:hover {
 }
 
 .adminPeople table img, .question div img, .adminQuotes img {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   border-radius: 15px;
   padding: 5px;
 }
@@ -109,6 +121,10 @@ ul, .answer {
   text-align: justify;
   padding-right: 10px;
   vertical-align: top;
+}
+
+.question a {
+  color: #4F08A3;
 }
 
 .login {

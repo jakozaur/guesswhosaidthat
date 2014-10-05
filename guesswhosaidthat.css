@@ -22,6 +22,11 @@ button a, button a:hover {
   color: white;
 }
 
+#login-dropdown-list {
+  list-style: none;
+  font-size: 150%;
+}
+
 .success {
   background-color: #26b27f;
   color: white;
@@ -88,12 +93,19 @@ ul, .answer {
   border-bottom: 1px solid #D3D3D3;
 }
 
-
 .adminQuotes .quote {
   max-width: 300px;
   text-align: justify;
   padding-right: 10px;
   vertical-align: top;
+}
+
+.login {
+  text-align: center;
+}
+
+.login .inner-div {
+  display: inline-block;
 }
 
 

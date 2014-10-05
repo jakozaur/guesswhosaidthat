@@ -28,7 +28,7 @@ Template.answer.correctAuthorUrl = function () {
 };
 
 Template.answer.events({
-  'click .btn': function () {
+  'click .next': function () {
     var position = Session.get('questionPosition');
     var order = Session.get('questionOrder');
     if (position + 1 < order.length) {
@@ -36,5 +36,14 @@ Template.answer.events({
     } else {
       Session.set('questionOrder', null);
     }
+  },
+  'click .tweet': function () {
+    // NOTE(jacek): Hacky way to detect if you have twitter app,
+    // works well on phone.
+    var now = new Date().valueOf();
+    setTimeout(function () {
+      if (new Date().valueOf() - now > 200) return;
+      window.location.href = "http://www.twitter.com/share?url=http://www.guesswhosaidthat.com/";
+    }, 50);
   }
 });

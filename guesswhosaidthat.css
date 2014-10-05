@@ -188,3 +188,11 @@ ul, .answer {
   color: black;
   margin-top: 0;
 }
+
+.answer .tweet {
+  float: left;
+}
+
+.answer .next {
+  float: right;
+}

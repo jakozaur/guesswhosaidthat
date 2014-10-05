@@ -20,7 +20,7 @@ Tracker.autorun(function () {
   Session.set('questionPosition', 0);
 });
 
-var currentQuoteId = function () {
+currentQuoteId = function () {
   var order = Session.get('questionOrder');
   var position = Session.get('questionPosition');
   if (order && position < order.length) {
@@ -47,6 +47,6 @@ Template.question.authors = function () {
       return People.findOne(el.id);
     });
   } else {
-    return "No more quotes";
+    return [];
   }
 };

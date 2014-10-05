@@ -2,20 +2,20 @@
   <div class="row question">
     <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-5 col-lg-offset-4">
       <h3>Who said: "{{quote}}" ?</h3>
-      <ul>
+      <div>
         {{#each authors}}
           {{> questionAuthor}}
         {{/each}}
-      </ul>
+      </div>
     </div>
   </div>
 </template>
 
 <template name="questionAuthor">
-  <li>
+  <div class="author">
     <a href="/answer">
       <img src="{{photoUrl}}" />
       <h4 class="quiz-answer">{{name}}</h4>
     </a>
-  </li>
+  </div>
 </template>

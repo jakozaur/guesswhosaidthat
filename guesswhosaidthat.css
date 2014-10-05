@@ -45,7 +45,18 @@ button a, button a:hover {
   margin: 0 auto;
 }
 
-.adminPeople table img, .question ul img, .adminQuotes img {
+.question .author {
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+
+.question .author img {
+  display: block;
+  margin: 0 auto;
+}
+
+.adminPeople table img, .question div img, .adminQuotes img {
   width: 64px;
   height: 64px;
   border-radius: 15px;

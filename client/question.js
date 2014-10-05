@@ -40,7 +40,6 @@ Template.question.quote = function () {
 };
 
 Template.question.authors = function () {
-  // TODO: random order
   var id = currentQuoteId();
   if (id) {
     return _.chain(Quotes.findOne(id).authors)
@@ -53,3 +52,14 @@ Template.question.authors = function () {
     return [];
   }
 };
+
+Template.questionAuthor.events({
+  'click .author': function (e, tmpl) {
+    var quote = Quotes.findOne(currentQuoteId());
+
+    if (this._id !== quote.authors[0].id) {
+      tmpl.$('.author').addClass('wrong-choice');
+      e.preventDefault();
+    }
+  }
+});

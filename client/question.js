@@ -43,9 +43,12 @@ Template.question.authors = function () {
   // TODO: random order
   var id = currentQuoteId();
   if (id) {
-    return _.map(Quotes.findOne(id).authors, function (el) {
-      return People.findOne(el.id);
-    });
+    return _.chain(Quotes.findOne(id).authors)
+      .shuffle()
+      .map(function (el) {
+        return People.findOne(el.id);
+      })
+      .value();
   } else {
     return [];
   }

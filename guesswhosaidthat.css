@@ -171,7 +171,7 @@ ul, .answer {
   color: #1d8761;
 }
 
-.answer img {
+.answer p img {
   border-radius: 15px;
   width: 70px;
   height: 70px;
@@ -189,8 +189,16 @@ ul, .answer {
   margin-top: 0;
 }
 
+.answer div {
+  min-height: 200px;
+}
+
 .answer .tweet {
   float: left;
+  background-color: white;
+  font-size: 14px;
+  padding: 9px 12px 8px 12px;
+  margin: 25px 0;
 }
 
 .answer .next {

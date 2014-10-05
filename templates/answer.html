@@ -1,10 +1,12 @@
 <template name="answer">
   <div class="answer">
     <h4>You are right!</h4>
-    <p><img src="{{correctAuthorUrl}}" />"{{quote}}"</p>
-    <h4 class="author">{{correctAuthorName}}</h4>
-    <a href="twitter://post?message=hello%20world" class="tweet btn btn-success success">
-      <h5>TWEET</h5>
+    <div>
+      <p><img src="{{correctAuthorUrl}}" />"{{quote}}"</p>
+      <h4 class="author">{{correctAuthorName}}</h4>
+    </div>
+    <a href="twitter://post?message=hello%20world" class="tweet btn">
+      <img src="/images/twitter_logo_blue.png" /> TWEET
     </a>
     <a href="/question" class="next btn btn-success success">
       <h5>NEXT QUESTION</h5>

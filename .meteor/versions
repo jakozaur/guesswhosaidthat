@@ -1,4 +1,5 @@
 accounts-base@1.1.1
+accounts-password@1.0.2
 aldeed:autoform@3.0.0
 aldeed:collection2@2.1.0
 aldeed:simple-schema@1.0.3
@@ -17,7 +18,9 @@ ctl-helper@1.0.3
 ctl@1.0.1
 ddp@1.0.9
 deps@1.0.4
+digilord:roles@1.2.12
 ejson@1.0.3
+email@1.0.3
 fastclick@1.0.0
 follower-livedata@1.0.1
 geojson-utils@1.0.0
@@ -47,6 +50,7 @@ mongo-livedata@1.0.5
 mongo@1.0.6
 mrt:flash-messages@0.2.4
 mrt:moment@2.6.0
+npm-bcrypt@0.7.7
 observe-sequence@1.0.2
 ordered-dict@1.0.0
 random@1.0.0
@@ -57,8 +61,10 @@ retry@1.0.0
 routepolicy@1.0.1
 service-configuration@1.0.1
 session@1.0.2
+sha@1.0.0
 spacebars-compiler@1.0.2
 spacebars@1.0.2
+srp@1.0.0
 stylus@1.0.4
 templating@1.0.7
 tracker@1.0.2

@@ -1,13 +1,21 @@
 <template name="question">
   <div class="row question">
     <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-5 col-lg-offset-4">
-      <h3>Who said: "I no longer believe that freedom and democracy are compatible." ?</h3>
+      <h3>Who said: "{{quote}}" ?</h3>
       <ul>
-        <li><a href="/answer"><img src="/people/obama.jpg" /><h4 class="quiz-answer">Barack Obama</h4></a></li>
-        <li><a href="/answer"><img src="/people/annan.jpg" /><h4 class="quiz-answer">Kofi Annan</h4></a></li>
-        <li><a href="/answer"><img src="/people/thiel.jpg" /><h4 class="quiz-answer">Peter Thiel</h4></a></li>
-        <li><a href="/answer"><img src="/people/sculley.jpg" /><h4 class="quiz-answer">John Sculley</h4></a></li>
+        {{#each authors}}
+          {{> questionAuthor}}
+        {{/each}}
       </ul>
     </div>
   </div>
+</template>
+
+<template name="questionAuthor">
+  <li>
+    <a href="/answer">
+      <img src="{{photoUrl}}" />
+      <h4 class="quiz-answer">{{name}}</h4>
+    </a>
+  </li>
 </template>

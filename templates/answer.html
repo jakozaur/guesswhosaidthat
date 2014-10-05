@@ -1,6 +1,9 @@
 <template name="answer">
   <div class="answer">
-    <h1>Said: {{correctAuthorName}}</h1>
+    <h4>You are right!</h4>
+    <p><img src="{{correctAuthorUrl}}" />"{{quote}}"</p>
+    <h4 class="author">{{correctAuthorName}}</h4>
+    
     <a href="/question" class="btn btn-success success">
       <h5>NEXT QUESTION</h5>
     </a>

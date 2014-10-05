@@ -26,6 +26,9 @@ button a, button a:hover {
   color: white;
 }
 
+.answer h3 {
+  text-align: justify;
+}
 
 #login-dropdown-list {
   list-style: none;
@@ -161,4 +164,27 @@ ul, .answer {
 .answer {
   margin: 0 auto;
   width: 300px;
+}
+
+.answer h4 {
+  text-align: center;
+  color: #1d8761;
+}
+
+.answer img {
+  border-radius: 15px;
+  width: 70px;
+  height: 70px;
+  float: left;
+  margin-right: 10px;
+}
+
+.answer p {
+  font-size: 18px;
+}
+
+.answer .author {
+  text-align: right;
+  color: black;
+  margin-top: 0;
 }

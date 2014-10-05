@@ -42,7 +42,7 @@ button a, button a:hover {
 }
 
 .start-guessing, .answer {
-  text-align: center;
+  margin: 0 auto;
 }
 
 .adminPeople table img, .question ul img, .adminQuotes img {

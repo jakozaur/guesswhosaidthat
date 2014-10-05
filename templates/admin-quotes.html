@@ -2,13 +2,14 @@
   <div class="adminQuotes container">
     <h1>Admin Quotes</h1>
     <a href="/admin"><h3>Admin main</h3></a>
+    {{> loginButtons}}
     {{#if editQuote}}
       {{> quickForm collection="Quotes" id="updateQuote" type="update" buttonContent="Edit" doc=editQuote}}
     {{else}}
       {{> quickForm collection="Quotes" id="insertQuote" type="insert" buttonContent="Add" validation="browser"}}
     {{/if}}
     <h3>Current quotes: {{quotesCounter}}</h3>
-    {{#each quotes}} 
+    {{#each quotes}}
       {{> adminQuote}}
     {{/each}}
   </div>

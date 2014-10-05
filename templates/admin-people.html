@@ -2,6 +2,7 @@
   <div class="adminPeople container">
     <h1>Add People</h1>
     <a href="/admin"><h4>Admin panel - main page</h4></a>
+    {{> loginButtons}}
     {{#if editPerson}}
       <h3>Edit</h3>
       {{> quickForm collection="People" id="updatePerson" type="update" buttonContent="Edit" doc=editPerson}}

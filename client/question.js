@@ -1,23 +1,46 @@
 Session.setDefault('questionOrder', null);
 Session.setDefault('questionPosition', 0);
+Session.setDefault('questionForceNext', null);
 
 Tracker.autorun(function () {
   if (!Subscription.quotes.ready()) {
     return;
   }
 
-  if (Session.get('questionOrder') !== null) {
+  var order = Session.get('questionOrder');
+  var forcedId = Session.get('questionForceNext');
+  if (order !== null &&
+      forcedId === null) {
     // TODO: add new questions
     return;
   }
 
-  var order = _.chain(Quotes.find().fetch())
-    .map(function (q) { return q._id; })
-    .shuffle()
-    .value();
+  if (order === null) {
+    // random order
+    var order = _.chain(Quotes.find().fetch())
+      .map(function (q) { return q._id; })
+      .filter(function (id) { return id !== forcedId; })
+      .shuffle()
+      .value();
+    var forced = Quotes.findOne(forcedId);
+    if (forced) {
+      order = [forced._id].concat(order);
+    }
+
+    Session.set('questionPosition', 0);
+  } else {
+    // we already have order, put force at current position
+    var index = _.indexOf(order, forcedId);
+    if (index !== -1) {
+      var currentPosition = Session.get('questionPosition');
+      var tmp = order[currentPosition];
+      order[currentPosition] = order[index];
+      order[index] = tmp;
+    }
+  }
 
   Session.set('questionOrder', order);
-  Session.set('questionPosition', 0);
+  Session.set('questionForceNext', null);
 });
 
 currentQuoteId = function () {

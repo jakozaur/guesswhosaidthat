@@ -32,7 +32,7 @@ var generateTweet = function () {
   if (id) {
     var quote = Quotes.findOne(id).quote;
     var prefix = "Who said: ";
-    var url = "http://guesswhosaidthat.com";
+    var url = "http://guesswhosaidthat.com/question/" + id;
     var maxLength = 140 /* tweet */- 25 /* t.co length */ - prefix.length;
     // t.co length:
     // https://dev.twitter.com/rest/reference/get/help/configuration

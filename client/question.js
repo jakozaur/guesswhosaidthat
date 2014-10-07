@@ -58,7 +58,7 @@ Template.question.quote = function () {
   if (id) {
     return Quotes.findOne(id).quote;
   } else {
-    return "No more quotes";
+    return "";
   }
 };
 

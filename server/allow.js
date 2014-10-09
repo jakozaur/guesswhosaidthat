@@ -13,3 +13,9 @@ Quotes.allow({
   update: isAdmin,
   remove: isAdmin
 });
+
+MvpEmails.allow({
+  insert: function () {
+    return true;
+  }
+});

@@ -1,6 +1,8 @@
 Session.setDefault('questionOrder', null);
 Session.setDefault('questionPosition', 0);
 Session.setDefault('questionForceNext', null);
+Session.setDefault('questionGavedEmail', false);
+
 
 Tracker.autorun(function () {
   if (!Subscription.quotes.ready()) {
@@ -83,6 +85,17 @@ Template.questionAuthor.events({
     if (this._id !== quote.authors[0].id) {
       tmpl.$('.author').addClass('wrong-choice');
       e.preventDefault();
+    }
+  }
+});
+
+AutoForm.hooks({
+  insertMvpEmail: {
+    after: {
+      insert: function () {} // No-op to avoid auto-form bug
+    },
+    onSuccess: function () {
+      Session.set('questionGavedEmail', true);
     }
   }
 });

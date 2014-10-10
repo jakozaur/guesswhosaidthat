@@ -55,7 +55,7 @@ Tracker.autorun(function () {
   _.each(next, function (quoteId) {
     var quote = Quotes.findOne(quoteId) || {};
     return _.map(quote.authors, function (authorId) {
-      var author = People.findOne(authorId.id) || {};
+      var author = People.findOne(authorId.id);
       if (author && !prefetched[author._id]) {
         prefetched[author._id] = true;
         var hint = document.createElement('link');

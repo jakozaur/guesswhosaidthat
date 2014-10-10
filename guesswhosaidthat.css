@@ -68,6 +68,10 @@ button a, button a:hover {
   position: relative;
 }
 
+.question .author a:hover {
+  text-decoration: none;
+}
+
 .question .author img {
   display: block;
   margin: 0 auto;

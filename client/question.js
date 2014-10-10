@@ -56,18 +56,14 @@ currentQuoteId = function () {
 };
 
 Template.question.quote = function () {
-  var id = currentQuoteId();
-  if (id) {
-    return Quotes.findOne(id).quote;
-  } else {
-    return "";
-  }
+  var quote = Quotes.findOne(currentQuoteId()) || {};
+  return quote.quote || "";
 };
 
 Template.question.authors = function () {
-  var id = currentQuoteId();
-  if (id) {
-    return _.chain(Quotes.findOne(id).authors)
+  var quote = Quotes.findOne(currentQuoteId());
+  if (quote) {
+    return _.chain(quote.authors)
       .shuffle()
       .map(function (el) {
         return People.findOne(el.id);

@@ -62,6 +62,14 @@ Tracker.autorun(function () {
         hint.setAttribute('rel', 'prefetch');
         hint.setAttribute('href', author.photoUrl);
         document.getElementsByTagName('head')[0].appendChild(hint);
+
+        var loadLater = function (url) {
+          setTimeout(function () {
+            var img = new Image();
+            img.src = url;
+          }, 1000);
+        };
+        loadLater(author.photoUrl);
       }
     });
   });

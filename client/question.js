@@ -2,6 +2,7 @@ Session.setDefault('questionOrder', null);
 Session.setDefault('questionPosition', 0);
 Session.setDefault('questionForceNext', null);
 Session.setDefault('questionGavedEmail', false);
+Session.setDefaultTemp('questionPrefetched', {});
 
 
 Tracker.autorun(function () {
@@ -43,6 +44,29 @@ Tracker.autorun(function () {
 
   Session.setPersistent('questionOrder', order);
   Session.setPersistent('questionForceNext', null);
+});
+
+Tracker.autorun(function () {
+  var PREFETCH_NEXT_COUNT = 2;
+  var prefetched = Session.get('questionPrefetched');
+  var order = Session.get('questionOrder') || [];
+  var position = Session.get('questionPosition');
+  var next = order.slice(position + 1, position + 1 + PREFETCH_NEXT_COUNT);
+  _.each(next, function (quoteId) {
+    var quote = Quotes.findOne(quoteId) || {};
+    return _.map(quote.authors, function (authorId) {
+      var author = People.findOne(authorId.id) || {};
+      if (author && !prefetched[author._id]) {
+        prefetched[author._id] = true;
+        var hint = document.createElement('link');
+        hint.setAttribute('rel', 'prefetch');
+        hint.setAttribute('href', author.photoUrl);
+        document.getElementsByTagName('head')[0].appendChild(hint);
+      }
+    });
+  });
+
+  Session.setTemp('questionPrefetched', prefetched);
 });
 
 currentQuoteId = function () {

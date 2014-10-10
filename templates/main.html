@@ -5,12 +5,5 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
-  {{> prefetch}}
   {{> flashMessages}}
 </body>
-
-<template name="prefetch">
-  {{#each resources}}
-    <link type="prefetch" href="{{url}}" />
-  {{/each}}
-</template>

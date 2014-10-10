@@ -13,3 +13,5 @@ mrt:flash-messages
 underscore
 accounts-password
 digilord:roles
+u2622:persistent-session
+

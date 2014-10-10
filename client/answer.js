@@ -58,9 +58,9 @@ Template.answer.events({
     var position = Session.get('questionPosition');
     var order = Session.get('questionOrder');
     if (position + 1 < order.length) {
-      Session.set('questionPosition', position + 1);
+      Session.setPersistent('questionPosition', position + 1);
     } else {
-      Session.set('questionOrder', null);
+      Session.setPersistent('questionOrder', null);
     }
   },
   'click .tweet': function (e) {

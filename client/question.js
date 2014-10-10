@@ -29,7 +29,7 @@ Tracker.autorun(function () {
       order = [forced._id].concat(order);
     }
 
-    Session.set('questionPosition', 0);
+    Session.setPersistent('questionPosition', 0);
   } else {
     // we already have order, put force at current position
     var index = _.indexOf(order, forcedId);
@@ -41,8 +41,8 @@ Tracker.autorun(function () {
     }
   }
 
-  Session.set('questionOrder', order);
-  Session.set('questionForceNext', null);
+  Session.setPersistent('questionOrder', order);
+  Session.setPersistent('questionForceNext', null);
 });
 
 currentQuoteId = function () {

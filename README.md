@@ -1,6 +1,13 @@
+# Guess Who Said That
 
+Minimum Viable Product for quiz game. Optimized for mobile and to [Startup School](http://www.startupschool.org/) audience. 
 
-## Images of people
-1. First just put public url.
-2. Crop/resize image to 160x160px and put in /public/people/LAST_NAME.jpg.
-3. Change in admin interface image link to /people/LAST_NAME.jpg
+![Screenshoot](https://raw.githubusercontent.com/jakozaur/guesswhosaidthat/images/screenshoot.png)
+
+## Technology
+
+Build with [Meteor](https://www.meteor.com)
+
+## Demo
+
+https://guesswhosaidthat.com
